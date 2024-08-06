@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Braking Simulation</title>
+    <style>
+        #simulationContainer {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        #car1,#car2 {
+            position: absolute;
+            width: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .charts-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        #speedChart, #distanceChart {
+            width: 48%; /* Adjust as needed to fit side by side */
+            height: 300px;
+        }
+        .controls {
+            margin: 20px;
+        }
+        .controls input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car Braking Simulation</h1>
+    <div class="controls">
+        <label>Speed (mph): <input type="number" id="speed" value="60"></label>
+        <label>Brake Deceleration (g): <input type="number" id="brakeDeceleration" value="1.0"></label>
+        <label>Follow Distance (inches): <input type="number" id="followDistance" value="1000"></label>
+        <label>Reaction Time (s): <input type="number" id="reactionTime" value="1.5"></label>
+        <button id="startButton">Start Simulation</button>
+    </div>
+    <div id="simulationContainer">
+        <img id="car1" src="car.png" alt="Car 1">
+        <img id="car2" src="car.png" alt="Car 2">
+    </div>
+    <div class="charts-container">
+        <div id="speedChart"></div>
+        <div id="distanceChart"></div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>
